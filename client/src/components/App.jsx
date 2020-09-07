@@ -1,7 +1,27 @@
 import React from 'react';
+import movies from './movies.jsx';
+import MoviesList from './MoviesList.jsx';
 
-const App = (props) => (
-  <div>Hello World!</div>
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: []
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <div className='list-title'>
+          <h2>My Saturday Night Movie List</h2>
+        </div>
+        <div className='list'>
+          <MoviesList movies={movies}/>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default App;
