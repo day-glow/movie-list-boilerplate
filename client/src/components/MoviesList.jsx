@@ -17,7 +17,13 @@ class MoviesList extends React.Component {
           <MovieItem movie={movie} key={movie.title}/>
         )
       })}
-
+    if (rows.length === 0) {
+      return (
+        <table>
+          <tbody id='sorry'>{'Sorry, no movies match your search.  Please try another movie title.'}</tbody>
+        </table>
+      )
+    }
     return (
       <table>
         <thead>
