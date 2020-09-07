@@ -7,14 +7,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
+      filterText: ''
     }
   }
 
-  handleSearchClick() {
-    console.log('great, now what')
+  handleSearchSubmit(query) {
+    console.log('great, now what', query)
     //event.target.value -> search query
     //search movie list array
+  }
+
+  handleFilterTextChange(filterMovies) {
+    this.setState({
+      filterText: filterMovies
+    });
+    console.log(this.state)
   }
 
   render() {
@@ -25,10 +33,13 @@ class App extends React.Component {
         </div>
         <div className='container'>
           <div className='Search'>
-            <Search onClick={this.handleSearchClick.bind(this)} />
+            <Search onChange={this.handleSearchSubmit.bind(this)}
+            filterText={this.state.filterText}
+            onFilterTextChange={this.handleFilterTextChange.bind(this)}/>
           </div>
           <div className='list'>
-            <MoviesList movies={movies}/>
+            <MoviesList movies={movies}
+            filterText={this.state.filterText}/>
           </div>
         </div>
       </div>

@@ -4,8 +4,15 @@ import MovieItem from './MovieItem.jsx';
 
 class MoviesList extends React.Component {
   render() {
+
+    const filterText = this.props.filterText.toUpperCase();
+    console.log('movieList filter text: ', filterText)
     const rows = [];
       {this.props.movies.map((movie) => {
+        if (movie.title.toUpperCase().indexOf(filterText) === -1) {
+          console.log('No Match!');
+          return;
+        }
         rows.push(
           <MovieItem movie={movie} key={movie.title}/>
         )
