@@ -2,10 +2,17 @@ import React from 'react';
 import App from './App.jsx';
 import MoviesList from './MoviesList.jsx';
 
-const MovieItem = (props) => (
-  <div>
-    <div className='movie-title'>{console.log('hello')}</div>
-  </div>
-);
+class MovieItem extends React.Component {
+  render() {
+
+    return (
+      <tr>
+        <td>{this.props.movie.title}</td>
+      </tr>
+    )
+
+  }
+}
+
 
 export default MovieItem;

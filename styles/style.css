@@ -1,23 +1,26 @@
 body {
   background: rgb(192, 187, 181);
-  font-family: 'Syncopate', sans-serif;
+  font-family: sans-serif;
 }
 
 h2 {
   font-size: 40px;
-  margin-top: 100px;
+  margin-left: 20px;
+  font-family: 'Covered By Your Grace', cursive;
 }
 
-.container {
+table {
   background: grey;
   margin: 100px auto;
   padding: 40px;
-  width: 40%;
+  width: 50%;
   border: 2px solid black;
 }
 
 .list-title {
-  text-align: center;
+  text-align: left;
+  padding: 10px;
+  background: rgb(162, 162, 163);
 }
 
 .list {
