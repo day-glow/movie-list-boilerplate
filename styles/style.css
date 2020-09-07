@@ -1,32 +1,56 @@
 body {
-  background: rgb(192, 187, 181);
+  background: rgba(46, 59, 59, 0.575);
   font-family: sans-serif;
 }
 
 h2 {
   font-size: 40px;
-  margin-left: 20px;
+  margin: 20px;
   font-family: 'Covered By Your Grace', cursive;
+  color: rgb(25, 38, 43);
 }
 
-table {
-  background: grey;
+.container {
+  margin-left: 130px;
+  font-size: 26px;
   margin: 100px auto;
-  padding: 40px;
-  width: 50%;
-  border: 2px solid black;
+  padding: 20px;
+  width: 250px;
+  background: rgba(106, 131, 133, 0.863);
+  border: 2px solid rgb(55, 64, 68);
+  color:  rgb(25, 38, 43);
+  border-radius: 5px;
+}
+
+td {
+  border: 1px solid lightcyan;
+  background: rgb(162, 162, 163);
+  padding: 20px;
+  width: 250px;
+  border-radius: 5px;
 }
 
 .list-title {
   text-align: left;
   padding: 10px;
   background: rgb(162, 162, 163);
+  border: 2px solid rgb(55, 64, 68);
+  border-radius: 5px;
 }
 
 .list {
   list-style-type: none;
-  font-size: 26px;
 }
 
+form {
+  height: 50px;
+  border-radius: 5px;
+}
+
+button {
+  font-family: sans-serif;
+  background-color: lightcyan;
+  border-radius: 5px;
+}
 
 
