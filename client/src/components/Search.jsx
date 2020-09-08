@@ -23,9 +23,9 @@ class Search extends React.Component {
     //must search movie list/filter
     //then change state with updated list
     this.props.onFilterTextChange(target.value);
-    // this.setState({
-    //   query: target.value //incorrect placeholder
-    // });
+    this.setState({
+      query: target.value //incorrect placeholder
+    });
   }
 
 

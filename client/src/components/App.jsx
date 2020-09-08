@@ -2,6 +2,7 @@ import React from 'react';
 import movies from './movies.jsx';
 import MoviesList from './MoviesList.jsx';
 import Search from './Search.jsx';
+import AddMovies from './AddMovies.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,10 @@ class App extends React.Component {
       movies: [],
       filterText: ''
     }
+  }
+
+  addMoviesToList(movie) {
+    console.log('add this movie to my state list: ', movie)
   }
 
   handleSearchSubmit(query) {
@@ -32,6 +37,9 @@ class App extends React.Component {
           <h2>My Saturday Night Movie List:</h2>
         </div>
         <div className='container'>
+          <div className='Add'>
+            <AddMovies movies={movies}/>
+          </div>
           <div className='Search'>
             <Search onChange={this.handleSearchSubmit.bind(this)}
             filterText={this.state.filterText}
