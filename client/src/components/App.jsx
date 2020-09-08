@@ -9,12 +9,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       movies: [],
-      filterText: ''
+      filterText: '',
+      addMovie: ''
     }
   }
 
   addMoviesToList(movie) {
-    console.log('add this movie to my state list: ', movie)
+    this.setState({
+      movies: movie
+    });
+    console.log('state has been changed: ', this.state)
   }
 
   handleSearchSubmit(query) {
@@ -38,7 +42,11 @@ class App extends React.Component {
         </div>
         <div className='container'>
           <div className='Add'>
-            <AddMovies movies={movies}/>
+            <AddMovies movies={movies}
+             value={this.state.movie}
+             addMoviesToList={this.addMoviesToList.bind(this)}
+
+            />
           </div>
           <div className='Search'>
             <Search onChange={this.handleSearchSubmit.bind(this)}
