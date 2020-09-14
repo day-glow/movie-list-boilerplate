@@ -9,16 +9,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       movies: [],
-      filterText: '',
-      addMovie: ''
+      filterText: ''
     }
   }
 
   addMoviesToList(movie) {
+    console.log('movie prop passed: ', movie);
+
     this.setState({
-      movies: movie
+      movies: [...this.state.movies, movie]
     });
-    console.log('state has been changed: ', this.state)
+    console.log(this.state);
   }
 
   handleSearchSubmit(query) {

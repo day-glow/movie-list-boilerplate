@@ -6,32 +6,28 @@ class AddMovies extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: ''
+      title: ''
     }
     console.log('movie props List: ', this.props.movies)
   }
 
   handleMovieToAdd(movie) {
-    this.setState({
-      movie: movie.target.value
-    })
-    console.log('state: ', this.state)
+    this.props.addMoviesToList({'title': movie.target.value});
+
     //this.props.addMovieToList(newMovie);
   }
 
   handleButtonToAdd(movie) {
-    e.preventDefault();
+    movie.preventDefault();
 
-    //search movie list and filter
-    //change state
-    this.props.addMoviesToList(this.state);
-    //movies.push({'title': movie.target.value})
-    //console.log(movies)
+
+    //this.props.addMoviesToList(this.state);
+
   }
 
   render() {
     return (
-      <form id='addMovie-form' onSubmit={this.  handleButtonToAdd.bind(this)}>
+      <form id='addMovie-form' onSubmit={this.handleButtonToAdd.bind(this)}>
         <input
           type="text"
           placeholder="Add Movie Title To List"
